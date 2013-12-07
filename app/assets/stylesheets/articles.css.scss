@@ -1,3 +1,42 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  width: 100%
+}
+
+.row{
+  width: 100%
+}
+
+.span12{
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  /*background-color: purple;*/
+}
+
+#articles-container{
+  width: 100%;
+  padding: 0px;
+  margin: 0px
+}
+
+#left-column{
+  /*background-color: red;*/
+  float: left;
+  padding: 0px 10px 0px 0px;
+  margin: 0px 5px 0px 0px;
+  font-size: 10px;
+}
+
+#middle-column{
+  /*background-color: blue*/
+  font-size: 10px;
+}
+
+#right-column{
+  /*background-color: green;*/
+  font-size: 10px;
+}

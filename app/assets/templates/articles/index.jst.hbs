@@ -1,0 +1,33 @@
+<h1>Listing articles</h1>
+
+
+<ul class="people_list">
+  {{#each article}}
+  <li>{{this}}</li>
+  {{/each}}
+</ul>
+
+
+<div id="articles-container" class="span12">
+
+  <div id='left-column' class="span3">
+    {{name}}
+    {{articles.length}}
+  </div>
+
+  <div id="middle-column" class="span6">
+    {{url}}
+    {{summary}}
+  </div>
+
+  <div id="right-column" class="span2">
+    {{published_at}}
+    {{guid}}
+    <a href='#'>Show</a>
+    <a href='#'>Edit</a>
+    <a href='#'>Destroy</a>
+  </div>
+
+</div>
+
+

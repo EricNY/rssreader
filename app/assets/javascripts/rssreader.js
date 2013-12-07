@@ -4,7 +4,9 @@ window.Rssreader = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    // alert('Hello from Backbone!');
+    new Rssreader.Routers.Articles;
+    Backbone.history.start();
   }
 };
 
