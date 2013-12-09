@@ -2,6 +2,7 @@ class Article < ActiveRecord::Base
 
   def self.update_from_feed(feed_url)
     feed = Feedzirra::Feed.fetch_and_parse(feed_url)
+    debugger
     add_entries(feed.entries)
   end
 

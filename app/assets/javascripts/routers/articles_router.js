@@ -4,8 +4,13 @@ Rssreader.Routers.Articles = Backbone.Router.extend({
     'articles/:id': 'show'
   },
 
+  initialize: function(){
+    this.collection = new Rssreader.Collections.Articles();
+    this.collection.fetch();
+  },
+
   index: function(){
-    var model = new Rssreader.Models.Article({id: 4});
+    var model = new Rssreader.Models.Article({collection: this.collection});
     model.fetch({
       success: function(model){
         var view = new Rssreader.Views.ArticlesIndex({model: model});
@@ -15,15 +20,12 @@ Rssreader.Routers.Articles = Backbone.Router.extend({
   },
 
   show: function(id){
-    // alert('show?'+id);
-    // debugger;
     var model = new Rssreader.Models.Article({id: id});
-
     model.fetch({
       success: function(model){
         var view = new Rssreader.Views.ArticlesShow({model: model});
-        // console.log(view.render().el);
-        $('#article').html(view.render().el);
+        $('#articles').html(view.render().el);
+        // console.log(view);
       }
     });
   }

@@ -1,5 +1,9 @@
 Rssreader::Application.routes.draw do
-  resources :articles
+  resources :articles do
+    collection do
+      post 'force_update'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -22,7 +26,7 @@ Rssreader::Application.routes.draw do
   #       get 'short'
   #       post 'toggle'
   #     end
-  #
+
   #     collection do
   #       get 'sold'
   #     end

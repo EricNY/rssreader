@@ -1,33 +1,30 @@
-<h1>Listing articles</h1>
-
-
-<ul class="people_list">
-  {{#each article}}
-  <li>{{this}}</li>
-  {{/each}}
-</ul>
-
-
 <div id="articles-container" class="span12">
 
   <div id='left-column' class="span3">
-    {{name}}
-    {{articles.length}}
+    <br><br><br><br>
+    <form id="new_feed">
+    <!--
+      <input type="text" name="pub_name" id="new_publication_name" placeholder="Enter title">
+    -->
+      <input type="text" name="name" id="new_feed_name" placeholder="Enter Rss URL">
+      <input type="submit" value="New RSS Feed">
+    </form>
+    <ul id='title-list'>
+    </ul>
   </div>
 
-  <div id="middle-column" class="span6">
-    {{url}}
-    {{summary}}
-  </div>
-
-  <div id="right-column" class="span2">
-    {{published_at}}
-    {{guid}}
-    <a href='#'>Show</a>
-    <a href='#'>Edit</a>
-    <a href='#'>Destroy</a>
+  <div id="right-column" class="span8">
+    <h2>Listing articles</h2>
+    <ul class="article_list" class='span8'>
+      {{#each articles}}
+        <li>
+          <div class='span8' id="eight">
+            <div class='span6' id='six'><a href='#articles/{{id}}'><b>{{name}}</b></a></div>
+            <div class='span2' id='one'>{{published_at}}</div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
   </div>
 
 </div>
-
-

@@ -1,10 +1,17 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
+  def force_update
+    Article.update_from_feed( params[:feed_url] )
+    # articles/force_update.html.erb
+    # render :text => "Success"
+  end
+
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.all.sort! { |x,y| y[:published_at].to_s <=> x[:published_at].to_s }
+    # @articles = Article.all
   end
 
   # GET /articles/1

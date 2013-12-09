@@ -3,40 +3,109 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-  width: 100%
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
 }
 
 .row{
-  width: 100%
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container{
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  list-style-type: none;
+}
+
+#one{
+  float: right;
+}
+
+#eight{
+  float: left;
+  text-align: left;
+  border-bottom-style: solid;
+  border-color: lightgray;
+  border-width: 1px;
+  /*border-bottom-style: solid;*/
+  /*border-color: lightgray;*/
+  border-width: 1px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+}
+
+#six{
+  float: left;
+  text-align: left;
+  /*border-bottom-style: solid;*/
+  /*border-color: lightgray;*/
+  border-width: 1px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+}
+
+.span8{
+  float: left;
+  text-align: left;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+
+}
+.span6{
+  float: left;
+    width: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 .span12{
   width: 100%;
   margin: 0px;
   padding: 0px;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
   /*background-color: purple;*/
+}
+
+.article_list{
+  width: 100%;
+  height: 100%;
+  float: left;
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
 }
 
 #articles-container{
   width: 100%;
-  padding: 0px;
-  margin: 0px
+  padding-bottom: 3px;
+  margin: 0px;
+  /*background-color: yellow;*/
 }
 
 #left-column{
   /*background-color: red;*/
   float: left;
   padding: 0px 10px 0px 0px;
-  margin: 0px 5px 0px 0px;
-  font-size: 10px;
-}
-
-#middle-column{
-  /*background-color: blue*/
+  margin: 0px 0px 0px 0px;
   font-size: 10px;
 }
 
 #right-column{
+  width: auto;
+  float: left;
+  margin: 0px;
+  padding: 0px;
   /*background-color: green;*/
   font-size: 10px;
+  text-align: left;
 }
