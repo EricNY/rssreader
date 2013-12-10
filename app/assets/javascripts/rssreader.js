@@ -6,6 +6,7 @@ window.Rssreader = {
   initialize: function() {
     // alert('Hello from Backbone!');
     new Rssreader.Routers.Articles;
+    // new Rssreader.Routers.Sources;
     Backbone.history.start();
   }
 };

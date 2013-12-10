@@ -2,28 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body{
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-  margin-left: 0 auto;
-  margin-right: 0 auto;
-}
-
-.row{
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-}
-
-.container{
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
+body {
+  color: #EDDAB6;
 }
 
 li {
   list-style-type: none;
+}
+
+@font-face {
+  font-family: Catull; src: url('/Catull.ttf');
+}
+
+#logo {
+  font: 50px Catull;
+  padding-left: 20px;
+  z-index: 89;
+  position: absolute;
+  color: #DD1812;
+}
+#listing{
+  font: 30px Catull;
+  color: #16A61E;
 }
 
 #one{
@@ -86,6 +86,7 @@ li {
 }
 
 #articles-container{
+  height: 100%;
   width: 100%;
   padding-bottom: 3px;
   margin: 0px;
@@ -93,19 +94,29 @@ li {
 }
 
 #left-column{
-  /*background-color: red;*/
-  float: left;
-  padding: 0px 10px 0px 0px;
+  z-index: 0;
+  height: 100%;
+  background-color: #1040CA;
+  position:absolute;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  top:0px;
+  left:0px;
+  padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
   font-size: 10px;
+
 }
 
 #right-column{
-  width: auto;
-  float: left;
-  margin: 0px;
-  padding: 0px;
-  /*background-color: green;*/
-  font-size: 10px;
-  text-align: left;
+
+ margin-top:0px;
+ margin-right:0px;
+ margin-left:290px;
+ overflow:hidden;
 }
+
+#new_feed {
+  padding-left: 20px;
+}
+

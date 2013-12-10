@@ -13,33 +13,25 @@
  */
 
 body{
+  /*background-color: black;*/
+  /*background-color: #EDDAB6;*/
   width: 100%;
-  margin: 0px;
-  padding: 0px;
-  margin-left: 0 auto;
-  margin-right: 0 auto;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .container{
+  /*background-color: #EDDAB6;*/
   width: 100%;
-  margin: 0px;
-  padding: 0px;
-  margin-left: 0 auto;
-  margin-right: 0 auto;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .row{
   width: 100%;
-  margin: 0px;
-  padding: 0px;
-  margin-left: 0 auto;
-  margin-right: 0 auto;
-}
-
-.span12 {
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-  margin-left: 0 auto;
-  margin-right: 0 auto;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }

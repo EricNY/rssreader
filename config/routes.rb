@@ -1,4 +1,6 @@
 Rssreader::Application.routes.draw do
+  resources :sources
+
   resources :articles do
     collection do
       post 'force_update'

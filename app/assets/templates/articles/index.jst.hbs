@@ -1,20 +1,23 @@
 <div id="articles-container" class="span12">
 
   <div id='left-column' class="span3">
-    <br><br><br><br>
+    <br><br><br><br><br>
     <form id="new_feed">
-    <!--
-      <input type="text" name="pub_name" id="new_publication_name" placeholder="Enter title">
-    -->
       <input type="text" name="name" id="new_feed_name" placeholder="Enter Rss URL">
       <input type="submit" value="New RSS Feed">
     </form>
     <ul id='title-list'>
+      {{#each sources}}
+        <li style='color:#FCCA03'>
+          {{name}}
+        </li>
+      {{/each}}
     </ul>
   </div>
 
-  <div id="right-column" class="span8">
-    <h2>Listing articles</h2>
+  <div id="right-column" class="span9">
+    <br>
+    <h2 id='listing'>Listing articles</h2>
     <ul class="article_list" class='span8'>
       {{#each articles}}
         <li>
@@ -28,3 +31,4 @@
   </div>
 
 </div>
+

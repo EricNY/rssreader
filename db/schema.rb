@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131203200104) do
+ActiveRecord::Schema.define(version: 20131209162418) do
 
   create_table "articles", force: true do |t|
     t.string   "name"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 20131203200104) do
     t.string   "url"
     t.datetime "published_at"
     t.string   "guid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "source_id"
+  end
+
+  create_table "sources", force: true do |t|
+    t.string   "url"
+    t.string   "rss_url"
+    t.string   "name"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

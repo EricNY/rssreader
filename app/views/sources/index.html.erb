@@ -1,0 +1,33 @@
+<h1>Listing sources</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Rss url</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sources.each do |source| %>
+      <tr>
+        <td><%= source.url %></td>
+        <td><%= source.rss_url %></td>
+        <td><%= source.name %></td>
+        <td><%= source.description %></td>
+        <td><%= link_to 'Show', source %></td>
+        <td><%= link_to 'Edit', edit_source_path(source) %></td>
+        <td><%= link_to 'Destroy', source, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Source', new_source_path %>
