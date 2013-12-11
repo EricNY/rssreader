@@ -6,6 +6,9 @@ Rssreader.Models.Article = Backbone.Model.extend({
     "summary": "default summary",
     "url": "default url",
     "published_at": "default published date",
-    "guid": "default guid"
+    "guid": "default guid",
+    "feed_url": "default feed url",
+    "source_id": "default source id",
+    "source": "default source"
   }
 });

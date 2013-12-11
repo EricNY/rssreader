@@ -17,14 +17,21 @@
 
   <div id="right-column" class="span9">
     <br>
-    <h2 id='listing'>Listing articles</h2>
-    <ul class="article_list" class='span8'>
+    <h2 id='listing'>Listing articles</h2><br>
+    <ul class="article_list" class='span9'>
       {{#each articles}}
-        <li>
-          <div class='span8' id="eight">
-            <div class='span6' id='six'><a href='#articles/{{id}}'><b>{{name}}</b></a></div>
-            <div class='span2' id='one'>{{published_at}}</div>
+        <li class='article-li'>
+          <div class='span9 hover article' id="article{{id}}">
+            <div class='span6 hover' id='article-link'>
+              <a class='article-link' data-article-id='{{id}}' href='#articles/{{id}}' style="hover"><span style='color:#0000CC'>{{source}}:</span> <b>{{name}}</b></a>
+            </div>
+            <div class='span3' id='one'>{{published_at}}</div>
           </div>
+
+          <div class='content'>
+
+          </div>
+
         </li>
       {{/each}}
     </ul>

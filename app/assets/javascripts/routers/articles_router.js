@@ -49,15 +49,3 @@ Rssreader.Routers.Articles = Backbone.Router.extend({
   }
 
 });
-
-
-
-// var modelA = new myModel({ color: "blue" });
-// var modelB = new otherModel({ age: 35 });
-
-// var superModel = new Backbone.Model();
-// superModel.set(modelA);
-// superModel.set(modelB);
-
-// console.log("color:", superModel.get("color"));
-// console.log("age:", superModel.get("age"));

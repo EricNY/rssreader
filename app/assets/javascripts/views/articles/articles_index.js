@@ -5,7 +5,8 @@ Rssreader.Views.ArticlesIndex = Backbone.View.extend({
   template2: JST['sources/index'],
 
   events:{
-    'submit #new_feed': 'createFeed'
+    'submit #new_feed': 'createFeed',
+    'click .article-link': 'showInfo'
   },
 
   initialize: function(a,b) {
@@ -14,23 +15,51 @@ Rssreader.Views.ArticlesIndex = Backbone.View.extend({
 
   render: function(){
     this.$el.html(this.template({sources:this.source_obj.toJSON(),articles: this.model.toJSON()}));
-    // this.$el.html(this.template2({sources: this.model2}));
-    console.log(this.model);
-    console.log(this.source_obj);
     return this;
   },
 
   createFeed: function(e){
     e.preventDefault();
     var feed_url = $('#new_feed_name').val();
-    $.post('/articles/force_update', {feed_url: feed_url}, function(){
-      // alert('testing url feeder');
-    });
+
+    $.post('/sources', {url: feed_url}, function(data){
+
+      $.post('/articles/force_update', {feed_url: feed_url, source_id: data.id, source: data.name}, function(){
+        // console.log();
+      }, 'json');
+
+      // console.log(data.id);
+    }, 'json');
+
+  },
+
+  showInfo: function(e){
+    e.preventDefault();
+    if($(e.currentTarget).hasClass("opened")) {
+      $(e.currentTarget).removeClass("opened");
+      $(e.currentTarget).closest("li").find(".content").html("");
+
+    } else {
+      var id = $(e.currentTarget).data('articleId');
+      // alert(id);
+      // debugger;
+      $(e.currentTarget).addClass("opened");
+
+      var model = new Rssreader.Models.Article({id: id});
+      model.fetch({
+        success: function(model){
+          var view = new Rssreader.Views.ArticlesShow({model: model});
+          $(e.target).closest("li").find(".content").html(view.render().el);
+          // console.log(view);
+        }
+      });
+    }
 
 
-    $.post('/sources', {url: feed_url}, function(){
 
-    });
+
+    // $('#article-li-'+id).append('haha');
+    // alert('test article-li click');
   }
 
 });
