@@ -16,7 +16,7 @@ li {
 
 #logo {
   font: 50px Catull;
-  padding-left: 20px;
+  padding-left: 120px;
   z-index: 89;
   position: absolute;
   color: #DD1812;
@@ -43,10 +43,11 @@ li {
 }
 .article:hover {
   background-color: #16A61E;
+  color: #16A61E;
   border-radius: 5px;
   text-decoration: none;
 }
-#article-link{
+.article-link{
   float: left;
   text-align: left;
   /*border-bottom-style: solid;*/
@@ -58,11 +59,17 @@ li {
 
 #six:hover{
   background-color: #16A61E;
+  color: #16A61E;
 }
 
-a{text-decoration: none}
-a:hover {background-color:#16A61E;}
-
+a{text-decoration: none;
+  /*background-color: red;*/
+}
+#art:hover {
+  background-color:#16A61E;
+  /*color: #16A61E;*/
+}
+.span9{margin-left: 0px;}
 .span8{
   float: left;
   text-align: left;
@@ -131,3 +138,6 @@ a:hover {background-color:#16A61E;}
   padding-left: 20px;
 }
 
+footer{
+  text-align: right;
+}

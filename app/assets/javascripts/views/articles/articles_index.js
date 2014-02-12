@@ -10,6 +10,9 @@ Rssreader.Views.ArticlesIndex = Backbone.View.extend({
   },
 
   initialize: function(a,b) {
+    // collection.on('change', this.render, this);
+    // model.on('change',this.render,this);
+    // this.on('change', this.render, this);
     this.source_obj = a.source_obj;
   },
 
@@ -21,16 +24,16 @@ Rssreader.Views.ArticlesIndex = Backbone.View.extend({
   createFeed: function(e){
     e.preventDefault();
     var feed_url = $('#new_feed_name').val();
-
     $.post('/sources', {url: feed_url}, function(data){
-
       $.post('/articles/force_update', {feed_url: feed_url, source_id: data.id, source: data.name}, function(){
         // console.log();
+      location.reload();
       }, 'json');
-
+      // this.collection.render;
       // console.log(data.id);
+      // location.reload();
     }, 'json');
-
+    setTimeout("location.reload();", 1000);
   },
 
   showInfo: function(e){
@@ -38,11 +41,8 @@ Rssreader.Views.ArticlesIndex = Backbone.View.extend({
     if($(e.currentTarget).hasClass("opened")) {
       $(e.currentTarget).removeClass("opened");
       $(e.currentTarget).closest("li").find(".content").html("");
-
     } else {
       var id = $(e.currentTarget).data('articleId');
-      // alert(id);
-      // debugger;
       $(e.currentTarget).addClass("opened");
 
       var model = new Rssreader.Models.Article({id: id});
@@ -55,11 +55,6 @@ Rssreader.Views.ArticlesIndex = Backbone.View.extend({
       });
     }
 
-
-
-
-    // $('#article-li-'+id).append('haha');
-    // alert('test article-li click');
   }
 
 });

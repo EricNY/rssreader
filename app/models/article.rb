@@ -6,7 +6,7 @@ class Article < ActiveRecord::Base
     add_entries(feed.entries, source_id, source)
   end
 
-  def self.update_from_feed_continuously(feed_url, delay_interval = 1.minutes, source_id, source)
+  def self.update_from_feed_continuously(feed_url, delay_interval = 15.minutes, source_id, source)
     feed = Feedzirra::Feed.fetch_and_parse(feed_url)
     add_entries(feed.entries, source_id, source)
     loop do

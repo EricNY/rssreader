@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# gem "i18n", "~> 0.6.9", :path => "./public/i18n-0.6.7.gem"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 gem "quiet_assets"

@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def force_update
-    Article.update_from_feed_continuously( params[:feed_url], params[:source_id], params[:source] )
+    Article.update_from_feed( params[:feed_url], params[:source_id], params[:source] )
     # articles/force_update.html.erb
     # render :text => "Success"
   end

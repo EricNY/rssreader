@@ -8,9 +8,11 @@
     </form>
     <ul id='title-list'>
       {{#each sources}}
-        <li style='color:#FCCA03'>
-          {{name}}
-        </li>
+        {{#if name}}
+          <li style='color:#FCCA03'>
+            {{name}} <!-- <a>remove</a> -->
+          </li>
+        {{/if}}
       {{/each}}
     </ul>
   </div>
@@ -20,19 +22,23 @@
     <h2 id='listing'>Listing articles</h2><br>
     <ul class="article_list" class='span9'>
       {{#each articles}}
-        <li class='article-li'>
-          <div class='span9 hover article' id="article{{id}}">
-            <div class='span6 hover' id='article-link'>
-              <a class='article-link' data-article-id='{{id}}' href='#articles/{{id}}' style="hover"><span style='color:#0000CC'>{{source}}:</span> <b>{{name}}</b></a>
+        {{#if name}}
+          <li class='article-li'>
+            <div class='span9 hover article' id="article{{id}}" style='margin-left: 0px'>
+              <div class='span5 hover' id='article-link'>
+                <a id='art' class='article-link hover' data-article-id='{{id}}' href='#articles/{{id}}'><span style='color:#0000CC'>{{source}}:</span> <b>{{name}}</b></a>
+              </div>
+              <div class='span3' id='one'>{{published_at}}</div>
             </div>
-            <div class='span3' id='one'>{{published_at}}</div>
-          </div>
 
-          <div class='content'>
+            <div class='content'>
 
-          </div>
+            </div>
 
-        </li>
+          </li>
+
+            </li>
+        {{/if}}
       {{/each}}
     </ul>
   </div>
